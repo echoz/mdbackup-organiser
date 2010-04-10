@@ -4,8 +4,8 @@
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 		
-	NSString *srcPath = @"/Users/jeremy/ac355f572185eeab8adc348922bba9a9fd25c23a/";
-	NSString *destPath = @"/Users/jeremy/backup/";
+	NSString *srcPath = @"";
+	NSString *destPath = @"";
 	
 	
 	/* -----------------------------------------------------------------------------
