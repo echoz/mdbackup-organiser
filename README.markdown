@@ -1,4 +1,5 @@
 mdbackup-organiser
+==================
 
 All iPhone/iPod touch backups are store in directories in ~/Library/Application Info/MobileSync/Backups.
 They are stored in directories that have the GUID of the device suffixed by the timestamp of the back up.
@@ -6,6 +7,7 @@ They are stored in directories that have the GUID of the device suffixed by the 
 Within these directories they consist of .mdinfo, .mddata as well as 3 plists that provide metadata information about the backup.
 
 PLIST
+-----
 - Info.plist
 Contains information about the backup and other generic information about the device associated with the back up.
 
@@ -18,6 +20,7 @@ Metadata file that contains a base64 encoded plist with the actual manifest data
 
 
 .MDDATA/.MDINFO
+---------------
 These files come in a pair. 
 
 MDINFO files are binary plists that contain metadata and also the actual mdinfo base64 encoded. They provide information about the .mddata about the domain it is in as well as its path and other related information.
@@ -29,6 +32,7 @@ MDDATA files are just basically any kind of file that has been renamed with a SH
 
 
 SELECTIVELY RESTORE APPLICATIONS
+--------------------------------
 In no way is this an official method to do this so proceed at your own risk.
 
 1. Remove all backups that iTunes currently has in iTunes preferences.
