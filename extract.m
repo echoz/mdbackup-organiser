@@ -30,7 +30,7 @@ int main (int argc, const char * argv[]) {
 	NSLog(@"Dealing with Application backup files now");
 	
 	for (id key in applications) {
-		currDest = [NSString stringWithFormat:@"%@Applications/%@",destPath,key];
+		currDest = [NSString stringWithFormat:@"%@Applications/%@/",destPath,key];
 		currArray = [[applications objectForKey:key] objectForKey:@"Files"];
 		
 		NSLog(@"\tDealing with %@ now...", key);
@@ -38,10 +38,10 @@ int main (int argc, const char * argv[]) {
 		
 		for (i=0;i<[currArray count];i++) {
 			NSLog(@"\t\tMoving %@ now...", [currArray objectAtIndex:i]);
-			[fm moveItemAtPath:[NSString stringWithFormat:@"%@%@.mdinfo",srcPath,[currArray objectAtIndex:i]]
+			[fm copyItemAtPath:[NSString stringWithFormat:@"%@%@.mdinfo",srcPath,[currArray objectAtIndex:i]]
 				  toPath:[NSString stringWithFormat:@"%@%@.mdinfo",currDest,[currArray objectAtIndex:i]]
 				   error:nil];
-			[fm moveItemAtPath:[NSString stringWithFormat:@"%@%@.mddata",srcPath,[currArray objectAtIndex:i]]
+			[fm copyItemAtPath:[NSString stringWithFormat:@"%@%@.mddata",srcPath,[currArray objectAtIndex:i]]
 				  toPath:[NSString stringWithFormat:@"%@%@.mddata",currDest,[currArray objectAtIndex:i]]
 				   error:nil];
 			[files removeObjectForKey:[currArray objectAtIndex:i]];
@@ -62,10 +62,10 @@ int main (int argc, const char * argv[]) {
 			[fm createDirectoryAtPath:currDest withIntermediateDirectories:YES attributes:nil error:nil];				
 		}
 		NSLog(@"Moving %@ to %@", key, [[files objectForKey:key] objectForKey:@"Domain"]);
-		[fm moveItemAtPath:[NSString stringWithFormat:@"%@%@.mdinfo",srcPath,key]
+		[fm copyItemAtPath:[NSString stringWithFormat:@"%@%@.mdinfo",srcPath,key]
 					toPath:[NSString stringWithFormat:@"%@%@.mdinfo",currDest,key]
 					 error:nil];
-		[fm moveItemAtPath:[NSString stringWithFormat:@"%@%@.mddata",srcPath,key]
+		[fm copyItemAtPath:[NSString stringWithFormat:@"%@%@.mddata",srcPath,key]
 					toPath:[NSString stringWithFormat:@"%@%@.mddata",currDest,key]
 					 error:nil];		
 		
