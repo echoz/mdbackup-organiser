@@ -6,6 +6,21 @@ They are stored in directories that have the GUID of the device suffixed by the 
 
 Within these directories they consist of .mdinfo, .mddata as well as 3 plists that provide metadata information about the backup.
 
+What mbbackup-organiser does is that you specify an iTunes backup directory and it will organise the files based upon the Manifest.plist into the source directory.
+
+A general layout after running the tool against say ~/Library/MobileSync/Backup/ac98023791091823798432970dfas932409 will give
+
+Applications
+. com.lexcycle.stanza
+.. 32904980902904380204320.mdinfo
+.. 32904980902904380204320.mddata
+.. etc.
+Files
+. HomeDomain
+. MediaDomain
+. KeychainDomain
+. Library
+
 PLIST
 -----
 - Info.plist
