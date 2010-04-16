@@ -8,7 +8,7 @@ Within these directories they consist of .mdinfo, .mddata as well as 3 plists th
 
 What mbbackup-organiser does is that you specify an iTunes backup directory and it will organise the files based upon the Manifest.plist into the source directory.
 
-A general layout after running the tool against say ~/Library/Application Support/MobileSync/Backup/<device UUID> will give
+A general layout after running the tool against say ~/Library/Application Support/MobileSync/Backup/[device UUID] will give
 
 	Applications
 	. com.lexcycle.stanza
