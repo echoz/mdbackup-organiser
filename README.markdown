@@ -1,14 +1,14 @@
 mdbackup-organiser
 ==================
 
-All iPhone/iPod touch backups are store in directories in ~/Library/Application Info/MobileSync/Backups.
+All iPhone/iPod touch backups are store in directories in ~/Library/Application Support/MobileSync/Backups.
 They are stored in directories that have the GUID of the device suffixed by the timestamp of the back up.
 
 Within these directories they consist of .mdinfo, .mddata as well as 3 plists that provide metadata information about the backup.
 
 What mbbackup-organiser does is that you specify an iTunes backup directory and it will organise the files based upon the Manifest.plist into the source directory.
 
-A general layout after running the tool against say ~/Library/MobileSync/Backup/ac98023791091823798432970dfas932409 will give
+A general layout after running the tool against say ~/Library/Application Support/MobileSync/Backup/<device UUID> will give
 
 	Applications
 	. com.lexcycle.stanza
